@@ -2,3 +2,4 @@
 
 export(myfirstfunction)
 export(myfun)
+export(mysum)
