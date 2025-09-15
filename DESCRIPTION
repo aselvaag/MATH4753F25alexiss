@@ -1,16 +1,17 @@
 Package: MATH4753F25alexiss
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Lab Code 2025
 Version: 0.1.0
 Authors@R: c(
     person(
-      "Jane", "Doe",
-      email = "jane@example.com",
-      role = c("aut", "cre")
+      "Alexis", "Selvaag",
+      email = "alexis.r.selvaag-1@ou.edu",
+      role = c("aut", "cre", "cph", "fnd"),
+      comment = "Student in MATH-4753 (FALL 2025)"
     )
   )
-Description: More about what it does (maybe more than one line).
-    Continuation lines should be indented.
-License: What license is it under?
+Description: Lab code for MATH-4753 (FALL 2025).
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 7.3.2
