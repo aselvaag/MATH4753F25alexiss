@@ -9,6 +9,9 @@ mysum(x)
 \arguments{
 \item{x}{vector}
 }
+\value{
+summary of x
+}
 \description{
 A new summary function
 }

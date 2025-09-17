@@ -2,7 +2,7 @@
 #'
 #' @param x vector
 #'
-#' @returns
+#' @returns summary of x
 #' @export
 #'
 #' @examples
