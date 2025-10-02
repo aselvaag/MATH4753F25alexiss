@@ -1,5 +1,7 @@
 ---
 title: "Birthday"
+author: "Alexis Selvaag"
+date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Birthday}
@@ -15,8 +17,72 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
+# Import my package (Name: Alexis Selvaag)
 library(MATH4753F25alexiss)
 ```
 
 
+## 1. Mathematical Derivation
 
+The birthday problem shows the probability of a population of $x$ people, where at least two people share the same birthday.
+
+*Note:* We are using $x$ instead of $n$ because Dr. Wayne Stewart mentioned in class to use $x$.
+
+First, we are going to let $P(A)$ be the probability that at least two people share a birthday, and let $P(\bar{A})$ be the probability that everyone in the population has unique birthdays.
+
+$P(\bar{A})$ is calculated as follows below:
+
+$$P(\bar{A}) = \frac{365}{365^x} \times \frac{365-1}{365^x} \times \cdots \times \frac{365-x+1}{365^x}$$
+
+Now, lets rewrite $P(\bar{A})$ in a more compact form, we must know where the formula for this problem comes from:
+
+$$^{365}P_{x}=x!^{365}C_{x}$$
+
+Rewrite $P(\bar{A})$ in its more compact form:
+
+$$P(\bar{A})=\frac{^{365}P_{x}}{365^{x}}$$
+
+To make $P(\bar{A})$ more simplistic for the average reader, we can use the following form:
+
+$$P(\bar{A}) = \frac{365!}{(365-x)! \cdot 365^x}$$
+
+We can also rewrite $P(\bar{A})$ as a logarithm:
+
+$$\log(P(\bar{A}))=\log(^{365}P_{x})-x\log(365)$$
+
+Then, $\log(P(\bar{A}))$ can be expanded into the following below:
+
+$$\log(P(\bar{A}))=\log(x!)+x\log( {365\choose{x}} )-x\log(365)$$
+
+Finally, we can visualize what $P(A)$ represents:
+
+$$P(A) = 1 - P(\bar{A}) = 1 - \frac{365!}{(365-x)! \cdot 365^x}$$
+
+This form of $P(A)$ represents the probability that at least two people share a birthday.
+
+## 2. Reformulation using lfactorial() and lchoose()
+
+The reformulation of the probability for a population of $x$ people who share the same birthday using `lfactorial()` and `lchoose()` is shown below (the original was made by Dr. Stewart, recreated by Alexis Selvaag):
+
+<center>
+!["Reformulation"](reformulation.jpeg){ width=80% }
+</center>
+
+
+## 3. The Birthday Function
+
+The birthday function contains inside the body:
+
+```{r}
+birthday=function(x){
+  1 - exp(lchoose(365,x) + lfactorial(x) - x*log(365))
+}
+```
+
+## 4. Example of the Birthday Function
+
+An example of how the birthday function is used:
+
+```{r}
+birthday(x=20:25)
+```
