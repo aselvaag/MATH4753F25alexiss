@@ -63,6 +63,6 @@ ntickets = function(N, gamma, p){
   abline(h = 0, col = "blue", lty = 1)
   abline(v = ticket_range[continuous_index], col = "blue", lty = 1)
 
-  # Return a list that prints the values of nd, nc, N, p, and gamma
+  # Return a list of values for nd, nc, N, p, and gamma
   return(list(nd = nd, nc = nc, N = N, p = p, gamma = gamma))
 }
