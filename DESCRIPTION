@@ -28,3 +28,5 @@ Roxygen: list(roclets = c("collate", "namespace", "rd",
     "roxyglobals::global_roclet"))
 Config/roxyglobals/filename: globals.R
 Config/roxyglobals/unique: FALSE
+Depends: 
+    R (>= 3.5)
