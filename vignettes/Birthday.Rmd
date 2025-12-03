@@ -74,8 +74,8 @@ The reformulation of the probability for a population of $x$ people who share th
 The birthday function contains inside the body:
 
 ```{r}
-birthday=function(k){
-  1 - exp(lchoose(365,k) + lfactorial(k) - k*log(365))
+birthday=function(x){
+  1 - exp(lchoose(365,x) + lfactorial(x) - x*log(365))
 }
 ```
 
@@ -84,5 +84,5 @@ birthday=function(k){
 An example of how the birthday function is used:
 
 ```{r}
-birthday(k=20:25)
+birthday(x=20:25)
 ```
