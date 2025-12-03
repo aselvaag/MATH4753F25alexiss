@@ -5,7 +5,7 @@
 \alias{ddt}
 \title{DDT data set.}
 \format{
-A data frame with 144 rows and 5 variables:
+A data frame with 144 rows and 6 variables:
 \describe{
   \item{RIVER}{river name}
   \item{MILE}{mile marker}
@@ -13,7 +13,6 @@ A data frame with 144 rows and 5 variables:
   \item{LENGTH}{length in cm}
   \item{WEIGHT}{weight of the fish, in gms}
   \item{DDT}{DDT concentration in ppm}
-  ...
 }
 }
 \source{
@@ -23,6 +22,6 @@ A data frame with 144 rows and 5 variables:
 ddt
 }
 \description{
-A data set collected by the US forces from the tennessee river and its tributaries
+A data set collected by the US forces from the Tennessee river and its tributaries
 }
 \keyword{datasets}
