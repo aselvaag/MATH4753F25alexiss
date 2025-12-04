@@ -1,0 +1,76 @@
+---
+title: "The Contents of My Package"
+author: "Alexis Selvaag"
+date: '`r format(Sys.Date(),format="%A, %B %d, %Y")`'
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{The Contents of My Package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(MATH4753F25alexiss)
+```
+
+# Package Summary
+
+>
+
+
+
+# Four Working Functions
+
+## `myboot2()`
+
+```{r}
+
+```
+
+## ``
+
+```{r}
+
+```
+
+## ``
+
+```{r}
+
+```
+
+## ``
+
+```{r}
+
+```
+
+
+
+# Data Set: FIREDAM.csv
+
+>**Description:** This data set contains information about each fire incident. The two variables are DISTANCE, which shows how far the fire is located from a fire station in miles, and DAMAGE, which shows the amount of thousands of dollars.  
+
+```{r}
+# Displays the first six rows of the FIREDAM.csv data set
+head(fire)
+
+# Displays the last six rows of the FIREDAM.csv data set
+tail(fire)
+
+# Shows a statistical summary of each item in the FIREDAM.csv data set
+summary(fire)
+```
+
+
+
+# Link to GITHUB
+
+[Alexis Selvaag's R Package for MATH-4753](https://github.com/aselvaag/MATH4753F25alexiss.git)
