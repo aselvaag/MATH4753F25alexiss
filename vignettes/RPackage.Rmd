@@ -1,10 +1,10 @@
 ---
-title: "The Contents of My Package"
+title: "My Package Contents"
 author: "Alexis Selvaag"
 date: '`r format(Sys.Date(),format="%A, %B %d, %Y")`'
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{The Contents of My Package}
+  %\VignetteIndexEntry{My Package Contents}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -12,7 +12,10 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  fig.width = 10,
+  fig.height = 6,
+  out.width = "90%"
 )
 ```
 
@@ -20,57 +23,68 @@ knitr::opts_chunk$set(
 library(MATH4753F25alexiss)
 ```
 
+# Link to GITHUB
+
+[Alexis Selvaag's R Package for MATH-4753](https://github.com/aselvaag/MATH4753F25alexiss.git)
+
+
+
 # Package Summary
 
->
+>This vignette shows four working functions and a data set that exists within this package. There is also many other functions and data sets that are avaiable to utlize in the package and can be used in various projects. For example, I would use the `mybin()` function for a binomial simlation or the FIREDAM.csv, and if I do not have to import it in the project, this data set can be reference within the package, without having the csv file in the project folder. 
+
 
 
 
 # Four Working Functions
 
+## `mybin()`
+
+>**Description:** This is a binomial bar plot showing the binomial probability ($p=0.85$) for the number of successes ($n=10$), throughout 10000 iterations.
+
+```{r}
+mybin(iter = 10000, n = 10, p = 0.85)
+```
+
 ## `myboot2()`
 
-```{r}
+>**Description:** This is a mean bootstrap function using a normal distribution where the $n$ sample size of 15, $\mu$ mean of 6, and a $\sigma$ standard deviation of 2.
 
+```{r}
+set.seed(4)
+sam = rnorm(15, mean = 6, sd = 3) 
+myboot2(iter = 10000, x = sam, fun = "mean", alpha = 0.05, xlab = "mean", col = "#1bb4cf")
 ```
 
-## ``
+## `myncurve()`
+
+>**Description:** This is a plot of a normal density curve that shades the area (probability) under the curve where $x \leq 12$. The conditions of the curve are where $\mu=10$ and $\sigma=2$.
 
 ```{r}
-
+myncurve(mu = 10, sigma = 2, a = 12)
 ```
 
-## ``
+## `mymlnorm()`
+
+>**Description:** This is a plot that determines the maximum likelihood from a number of different samples from $\hat{\mu}$ and $\hat{\sigma}$ using a normal distribution. The samples are where $y$ has the following values: 10, 12, 13, 15, 12, 11, and 10.
 
 ```{r}
-
-```
-
-## ``
-
-```{r}
-
+mymlnorm(x = c(10, 12, 13, 15, 12, 11, 10), mu = seq(10, 14, length = 1000), sig = seq(0.1, 4, length = 1000), lwd = 2, labcex = 1)
 ```
 
 
 
 # Data Set: FIREDAM.csv
 
->**Description:** This data set contains information about each fire incident. The two variables are DISTANCE, which shows how far the fire is located from a fire station in miles, and DAMAGE, which shows the amount of thousands of dollars.  
+>**Description:** This data set contains information about each fire incident. The two variables are DISTANCE, shows how far the fire is located from a fire station in miles, and DAMAGE, shows the amount of thousands of dollars.  
 
 ```{r}
-# Displays the first six rows of the FIREDAM.csv data set
+# Display the first six rows of the FIREDAM.csv data set
 head(fire)
 
-# Displays the last six rows of the FIREDAM.csv data set
+# Display the last six rows of the FIREDAM.csv data set
 tail(fire)
 
-# Shows a statistical summary of each item in the FIREDAM.csv data set
+# Show a statistical summary of each item in the FIREDAM.csv data set
 summary(fire)
 ```
-
-
-
-# Link to GITHUB
-
-[Alexis Selvaag's R Package for MATH-4753](https://github.com/aselvaag/MATH4753F25alexiss.git)
